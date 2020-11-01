@@ -1,6 +1,6 @@
 package Classwork;
 
-public class classwork {
+public class Classwork {
     public static void main(String[] args) {
         int[] arr = {2, 5, 7, 9, 12, 16, 3, 4, 86, 64, 77, 32, 1};
         int x;
