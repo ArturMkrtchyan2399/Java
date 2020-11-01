@@ -27,9 +27,9 @@ public class SecondLesson {
         }
 
         System.out.println("Task 5\nCreate an array and fill it. Print all elements which are between 24.12 and 467.23.");
-        float[] arr5 = {12.4F,24.8F,567.45F,76.6F,98.43F,45.56F};
+        double[] arr5 = {12.4,24.8,567.45,76.6,98.43,45.56};
         for(int i = 0;i < arr5.length;i++){
-            if(arr5[i]>24.12F && arr5[i]<467.23F){
+            if(arr5[i]>24.12 && arr5[i]<467.23){
                 System.out.println(arr5[i]);
             }
         }
