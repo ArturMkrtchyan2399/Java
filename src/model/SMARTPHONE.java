@@ -1,4 +1,4 @@
-package homework;
+package model;
 
 public class SMARTPHONE {
     private String name;
