@@ -5,7 +5,7 @@ import Exam.model.Plane;
 import java.util.Scanner;
 
 public class PlaneService {
-    public Plane create(){
+    public Plane create() {
         System.out.println("-----Create Plane-----");
         Scanner s = new Scanner(System.in);
         Plane plane = new Plane();
