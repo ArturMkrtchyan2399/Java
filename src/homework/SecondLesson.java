@@ -5,7 +5,7 @@ public class SecondLesson {
     public static void main(String[] args) {
         System.out.println("Task 1\nCreate an array and fill it with 2 number.");
         int[] arr1 = {2, 2, 2, 2, 2, 2, 2, 2};
-
+        System.out.println(arr1);
         System.out.println("Task 2\nCreate an array and fill it with numbers from 1:1000.");
         int[] arr2 = new int[1000];
         for (int i = 0; i < arr2.length; i++) {

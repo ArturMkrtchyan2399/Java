@@ -18,5 +18,6 @@ public class FirstLesson {
         System.out.println(letter);
         boolean flag = true;
         System.out.println(flag);
+
     }
 }
