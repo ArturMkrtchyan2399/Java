@@ -70,7 +70,6 @@ public class Film implements Video {
     }
 
 
-
     @Override
     public String toString() {
         return "Scenario - " + scenario + '\n' +
@@ -92,15 +91,14 @@ public class Film implements Video {
 
     @Override
     public int age() {
-        return  (new Date()).getYear() + 1900 - year;
+        return (new Date()).getYear() + 1900 - year;
     }
 
     @Override
     public void setVolume(int volume) {
-        if(volume>=0 && volume <=100){
+        if (volume >= 0 && volume <= 100) {
             System.out.println("Volume is set to " + volume);
-        }
-        else{
+        } else {
             System.out.println("Invalid value");
         }
     }

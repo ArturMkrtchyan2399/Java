@@ -45,6 +45,6 @@ public class Detective extends Film {
         return super.toString() + '\n' +
                 "Disclosure Of Events - " + disclosureOfEvents + '\n' +
                 "Disclosure Of Perpetrators - " + disclosureOfPerpetrators + '\n' +
-                "Is Suspicious Cases - " + isSuspiciousCases ;
+                "Is Suspicious Cases - " + isSuspiciousCases;
     }
 }

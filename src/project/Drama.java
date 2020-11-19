@@ -35,6 +35,6 @@ public class Drama extends Film {
     public String toString() {
         return super.toString() + '\n' +
                 "Relationship - " + relationship + '\n' +
-                "States Of Human Life - " + statesOfHumanLife ;
+                "States Of Human Life - " + statesOfHumanLife;
     }
 }
