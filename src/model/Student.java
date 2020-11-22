@@ -56,4 +56,5 @@ public class Student {
     public void setNumCourses(int numCourses) {
         this.NumCourses = numCourses;
     }
+
 }
