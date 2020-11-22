@@ -1,7 +1,7 @@
-package studentTask;
+package Task;
 
-import studentTask.model.Student;
-import studentTask.service.StudentService;
+import Task.model.Student;
+import Task.service.StudentService;
 
 import java.io.IOException;
 import java.nio.file.Files;

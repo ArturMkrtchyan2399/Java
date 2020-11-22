@@ -1,6 +1,6 @@
-package studentTask.service;
+package Task.service;
 
-import studentTask.model.Student;
+import Task.model.Student;
 
 public class StudentService {
     public void printFullNames(Student[] students) {

@@ -1,4 +1,4 @@
-package studentTask.model;
+package Task.model;
 
 public class Student {
     private String firstName;
