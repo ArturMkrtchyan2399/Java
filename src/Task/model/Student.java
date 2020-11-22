@@ -13,8 +13,6 @@ public class Student {
         setLastName(lastName);
         if (year > 1920 && year <= 2020) {
             this.year = year;
-        } else {
-            System.out.println("Invalid birth year");
         }
         setGender(gender);
         setMark(mark);
@@ -27,8 +25,6 @@ public class Student {
     public void setFirstName(String firstName) {
         if (firstName != null && !firstName.isEmpty()) {
             this.firstName = firstName;
-        } else {
-            System.out.println("Invalid first name");
         }
     }
 
@@ -39,8 +35,6 @@ public class Student {
     public void setLastName(String lastName) {
         if (lastName != null && !lastName.isEmpty()) {
             this.lastName = lastName;
-        } else {
-            System.out.println("Invalid last name");
         }
     }
 
@@ -56,8 +50,6 @@ public class Student {
     public void setGender(String gender) {
         if (gender != null && !gender.isEmpty()) {
             this.gender = gender;
-        } else {
-            System.out.println("Invalid gender");
         }
     }
 
@@ -68,8 +60,6 @@ public class Student {
     public void setMark(double mark) {
         if (mark >= 0) {
             this.mark = mark;
-        } else {
-            System.out.println("Invalid mark");
         }
     }
 
