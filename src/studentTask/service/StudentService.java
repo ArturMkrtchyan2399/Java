@@ -37,14 +37,14 @@ public class StudentService {
 
     public void printBiggestMaleInformation(Student[] students) {
         Student biggestMale = null;
-        int year = students[0].getYear();
+        int year = 5000;
         for (int i = 0; i < students.length; ++i) {
-            if (students[i].getGender().equals("m") && students[i].getYear() < year) {
+            if (students[i].getYear() < year && students[i].getGender().equals("m")) {
                 biggestMale = students[i];
                 year = students[i].getYear();
             }
         }
-        if (biggestMale != null) {
+        if (year != 0) {
             System.out.println(biggestMale);
         } else {
             System.out.println("There is not male student");

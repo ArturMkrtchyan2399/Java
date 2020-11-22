@@ -1,3 +1,5 @@
+package studentTask;
+
 import studentTask.model.Student;
 import studentTask.service.StudentService;
 
@@ -8,7 +10,7 @@ import java.nio.file.Paths;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        Path path = Paths.get("C:\\Users\\Hayk_Avdalyan\\Desktop\\students.txt");
+        Path path = Paths.get("C:\\Users\\Artur\\Desktop\\a.txt");
         String[] lines = Files.readAllLines(path).toArray(new String[0]);
         Student[] students = new Student[lines.length];
 
