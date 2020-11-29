@@ -1,0 +1,2 @@
+Artur,Mkrtchan,m,21,Ashtarak,5,100.0,python
+Edgar,GHazaryan,m,18,Dilijan,8,150.0,pascal

@@ -1,0 +1,2 @@
+Edgar,Ghazaryan,m,45,Dilijan,5,200.0,1
+Artur,Mkrtchyan,m,21,Ashtarak,8,250.0,5
