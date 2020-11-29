@@ -100,6 +100,9 @@ public class ProgrammerService {
             System.out.println("There is no programmers");
             return;
         }
+        if (language == null && language.isEmpty()) {
+            System.out.println("Invalid language");
+        }
         for (Programmer programmer : programmers) {
             if (programmer.getProgrammingLanguage().toLowerCase().equals(language.toLowerCase())) {
                 System.out.println(programmer);
