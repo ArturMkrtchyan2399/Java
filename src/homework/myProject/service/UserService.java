@@ -6,8 +6,6 @@ import homework.myProject.main.User;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -103,7 +101,7 @@ public class UserService implements DBPaths {
 
     }
 
-    private  String hashingPassword(String password) {
+    private String hashingPassword(String password) {
         String hashtext = null;
         try {
             MessageDigest md = MessageDigest.getInstance("MD5");
