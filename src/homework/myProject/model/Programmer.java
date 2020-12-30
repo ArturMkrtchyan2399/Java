@@ -1,6 +1,6 @@
 package homework.myProject.model;
 
-public class Programmer extends Employee{
+public class Programmer extends Employee {
     private String programmingLanguage;
 
     public Programmer(String firstName, String lastName, String gender, int age, String address, int experience, double salary, String programmingLanguage) {

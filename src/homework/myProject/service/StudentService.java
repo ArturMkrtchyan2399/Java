@@ -1,16 +1,29 @@
 package homework.myProject.service;
 
 
+import homework.myProject.config.DBPaths;
 import homework.myProject.model.Student;
 
 import java.io.IOException;
-import java.nio.file.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
-public class StudentService {
+public class StudentService extends HumanService implements DBPaths {
+    private static final StudentService instance = new StudentService();
 
+    private StudentService() {
+    }
 
-    public void addStudent() throws IOException {
+    public static StudentService getInstance() {
+        return instance;
+    }
+
+    public void addStudent() {
         System.out.println("Fill in details");
         Scanner s = new Scanner(System.in);
         System.out.println("Please Enter First Name");
@@ -25,59 +38,45 @@ public class StudentService {
         int studentID = s.nextInt();
         System.out.println("Please Enter Mark");
         double mark = s.nextDouble();
-        Student st = new Student(firstName, lastName, gender, age, studentID, mark);
+        Student st;
+        try {
+            st = new Student(firstName, lastName, gender, age, studentID, mark);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+            return;
+        }
+
         String data = String.join(",", st.getFirstName(), st.getLastName(), st.getGender(), Integer.toString(st.getAge()), Integer.toString(st.getStudentdID()), Double.toString(st.getMark())) + "\n";
-        Files.write(Paths.get("C:\\Users\\Artur\\IdeaProjects\\Java\\src\\homework\\myProject\\files\\student.txt"), data.getBytes(), StandardOpenOption.APPEND);
+        try {
+            Files.write(studentsPath, data.getBytes(), StandardOpenOption.APPEND);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-    public Student[] readStudentFile() throws IOException {
-        Path path = Paths.get("C:\\Users\\Artur\\IdeaProjects\\Java\\src\\homework\\myProject\\files\\student.txt");
-        String[] lines = Files.readAllLines(path).toArray(new String[0]);
-        Student[] students = new Student[lines.length];
-        for (int i = 0; i < lines.length; ++i) {
-            String[] current = lines[i].split(",");
-            students[i] = new Student(current[0], current[1], current[2], Integer.parseInt(current[3]), Integer.parseInt(current[4]), Double.parseDouble(current[5]));
+    public List<Student> readStudentFile() {
+        List<String> lines = null;
+        try {
+            lines = Files.readAllLines(studentsPath);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        List<Student> students = new ArrayList<>();
+        for (String line : lines) {
+            String[] current = line.split(",");
+            students.add(new Student(current[0],
+                    current[1],
+                    current[2],
+                    Integer.parseInt(current[3]),
+                    Integer.parseInt(current[4]),
+                    Double.parseDouble(current[5])));
         }
         return students;
     }
 
-    public void printFullNames(Student[] students) {
-        if (students.length == 0) {
-            System.out.println("There is no students");
-            return;
-        }
-        for (Student student : students) {
-            System.out.println("Full Name - " + student.getFirstName() + " " + student.getLastName());
-        }
-    }
 
-    public void printAllMales(Student[] students) {
-        if (students.length == 0) {
-            System.out.println("There is no students");
-            return;
-        }
-        for (Student student : students) {
-            if (student.getGender().equals("m")) {
-                System.out.println(student);
-            }
-        }
-    }
-
-    public void printAllFemales(Student[] students) {
-        if (students.length == 0) {
-            System.out.println("There is no students");
-            return;
-        }
-        for (Student student : students) {
-            if (student.getGender().equals("f")) {
-                System.out.println(student);
-            }
-        }
-    }
-
-
-    public void printAllFemalesGreaterThan50(Student[] students) {
-        if (students.length == 0) {
+    public void printAllFemalesGreaterThan50(List<Student> students) {
+        if (students.isEmpty()) {
             System.out.println("There is no students");
             return;
         }
@@ -88,8 +87,8 @@ public class StudentService {
         }
     }
 
-    public void printAllMalesGreaterThan50(Student[] students) {
-        if (students.length == 0) {
+    public void printAllMalesGreaterThan50(List<Student> students) {
+        if (students.isEmpty()) {
             System.out.println("There is no students");
             return;
         }
@@ -100,20 +99,12 @@ public class StudentService {
         }
     }
 
-    public void printStudentSortedByMark(Student[] students) {
-        if (students.length == 0) {
+    public void printStudentSortedByMark(List<Student> students) {
+        if (students.isEmpty()) {
             System.out.println("There is no students");
             return;
         }
-        for (int i = 0; i < students.length - 1; i++) {
-            for (int j = i + 1; j < students.length; j++) {
-                if (students[i].getMark() > students[j].getMark()) {
-                    Student temp = students[i];
-                    students[i] = students[j];
-                    students[j] = temp;
-                }
-            }
-        }
+        students.sort((o1, o2) -> (int) (o1.getMark() - o2.getMark()));
         for (Student student : students) {
             System.out.println(student);
         }

@@ -19,7 +19,7 @@ public class Student extends Human {
         if (mark >= 0 && mark <= 100) {
             this.mark = mark;
         } else {
-            System.out.println("Invalid mark");
+            throw new IllegalArgumentException("Invalid mark");
         }
     }
 
@@ -31,13 +31,13 @@ public class Student extends Human {
         if (studentdID > 0) {
             this.studentdID = studentdID;
         } else {
-            System.out.println("Invalid Student ID");
+            throw new IllegalArgumentException("Invalid Student ID");
         }
     }
 
     @Override
     public String toString() {
-        return super.toString() + '\n'+
+        return super.toString() + '\n' +
                 "Mark - " + mark + "\n";
     }
 }

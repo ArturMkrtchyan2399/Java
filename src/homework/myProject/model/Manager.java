@@ -16,7 +16,7 @@ public class Manager extends Employee {
         if (teamSize > 0) {
             this.teamSize = teamSize;
         } else {
-            System.out.println("Invalid team size");
+            throw new IllegalArgumentException("Invalid team size");
         }
     }
 

@@ -21,7 +21,7 @@ public abstract class Human {
         if (firstName != null && firstName.matches("[A-Za-z]+")) {
             this.firstName = firstName;
         } else {
-            System.out.println("Invalid first name");
+            throw new IllegalArgumentException("Invalid first name");
         }
     }
 
@@ -33,7 +33,7 @@ public abstract class Human {
         if (lastName != null && lastName.matches("[A-Za-z]+")) {
             this.lastName = lastName;
         } else {
-            System.out.println("Invalid lastName name");
+            throw new IllegalArgumentException("Invalid last name");
         }
     }
 
@@ -42,10 +42,10 @@ public abstract class Human {
     }
 
     public void setGender(String gender) {
-        if (gender != null && !gender.isEmpty()) {
+        if ((gender != null && !gender.isEmpty()) && (gender.equals("f") || gender.equals("m"))) {
             this.gender = gender;
         } else {
-            System.out.println("Invalid gender");
+            throw new IllegalArgumentException("Invalid gender");
         }
     }
 

@@ -20,7 +20,7 @@ public abstract class Employee extends Human {
         if (address != null && !address.isEmpty()) {
             this.address = address;
         } else {
-            System.out.println("Invalid address ");
+            throw new IllegalArgumentException("Invalid address ");
         }
     }
 
@@ -32,7 +32,7 @@ public abstract class Employee extends Human {
         if (experience >= 0) {
             this.experience = experience;
         } else {
-            System.out.println("Invalid experience");
+            throw new IllegalArgumentException("Invalid experience");
         }
     }
 
@@ -44,7 +44,7 @@ public abstract class Employee extends Human {
         if (salary > 0) {
             this.salary = salary;
         } else {
-            System.out.println("Invalid salary");
+            throw new IllegalArgumentException("Invalid salary");
         }
     }
 
