@@ -1,7 +1,7 @@
 package homework.myProject.service;
 
 import homework.myProject.config.DBPaths;
-import homework.myProject.main.User;
+import homework.myProject.model.User;
 
 import java.io.IOException;
 import java.math.BigInteger;

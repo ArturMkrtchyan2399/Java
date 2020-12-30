@@ -1,4 +1,4 @@
-package homework.myProject.main;
+package homework.myProject.model;
 
 public class User {
     private String fullName;

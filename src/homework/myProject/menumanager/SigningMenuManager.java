@@ -1,6 +1,6 @@
 package homework.myProject.menumanager;
 
-import homework.myProject.main.User;
+import homework.myProject.model.User;
 import homework.myProject.service.UserService;
 
 import java.util.Scanner;
