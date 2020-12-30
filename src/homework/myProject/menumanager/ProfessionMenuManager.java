@@ -1,8 +1,8 @@
 package homework.myProject.menumanager;
 
-import homework.professionmanager.ManagerManager;
-import homework.professionmanager.ProgrammerManager;
-import homework.professionmanager.StudentManager;
+import homework.myProject.professionmanager.ManagerManager;
+import homework.myProject.professionmanager.ProgrammerManager;
+import homework.myProject.professionmanager.StudentManager;
 
 import java.util.Scanner;
 

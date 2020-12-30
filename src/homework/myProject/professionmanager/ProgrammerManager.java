@@ -1,4 +1,4 @@
-package homework.professionmanager;
+package homework.myProject.professionmanager;
 
 import homework.myProject.service.ProgrammerService;
 
