@@ -22,7 +22,11 @@ public class Programmer extends Employee {
 
     @Override
     public String toString() {
-        return super.toString() + '\n' +
-                "Programming Language - " + programmingLanguage + "\n";
+        StringBuilder sb = new StringBuilder();
+                sb.append(super.toString())
+                .append("\nProgramming Language - ")
+                .append(programmingLanguage)
+                .append("\n");
+        return sb.toString();
     }
 }

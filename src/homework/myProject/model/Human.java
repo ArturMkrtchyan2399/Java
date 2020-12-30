@@ -63,10 +63,16 @@ public abstract class Human {
 
     @Override
     public String toString() {
-        return "First Name - " + getFirstName() + '\n' +
-                "Last Name - " + getLastName() + '\n' +
-                "Gender - " + getGender() + '\n' +
-                "Age - " + getAge();
+        StringBuilder sb = new StringBuilder();
+                sb.append("First Name - ")
+                .append(getFirstName())
+                .append("\nLast Name - ")
+                .append(getLastName())
+                .append("\nGender - ")
+                .append(getGender())
+                .append("\nAge - ")
+                .append(getAge());
+        return sb.toString();
     }
 }
 

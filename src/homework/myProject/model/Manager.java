@@ -22,7 +22,11 @@ public class Manager extends Employee {
 
     @Override
     public String toString() {
-        return super.toString() + '\n' +
-                "Team Size - " + teamSize + "\n";
+        StringBuilder sb = new StringBuilder();
+                sb.append(super.toString())
+                .append("\nTeam Size - ")
+                .append(teamSize)
+                .append("\n");
+        return sb.toString();
     }
 }

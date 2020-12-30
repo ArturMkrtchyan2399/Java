@@ -50,9 +50,14 @@ public abstract class Employee extends Human {
 
     @Override
     public String toString() {
-        return super.toString() + '\n' +
-                "Address - " + address + '\n' +
-                "Experience - " + experience + '\n' +
-                "Salary - " + salary;
+        StringBuilder sb = new StringBuilder();
+                sb.append(super.toString())
+                .append("\nAddress - ")
+                .append(address)
+                .append("\nExperience - ")
+                .append(experience)
+                .append("\nSalary - ")
+                .append(salary);
+        return sb.toString();
     }
 }

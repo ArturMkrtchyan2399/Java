@@ -37,7 +37,13 @@ public class Student extends Human {
 
     @Override
     public String toString() {
-        return super.toString() + '\n' +
-                "Mark - " + mark + "\n";
+        StringBuilder sb = new StringBuilder();
+        sb.append(super.toString())
+                .append("\nStudent ID - ")
+                .append(studentdID)
+                .append("\nMark - ")
+                .append(mark)
+                .append("\n");
+        return sb.toString();
     }
 }
